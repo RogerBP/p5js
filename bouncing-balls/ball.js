@@ -1,7 +1,7 @@
 class Ball {
     constructor(x, y, radius) {
         this.pos = createVector(x, y);
-        this.spd = createVector(5, 0);
+        this.spd = createVector(5, 5);
         this.radius = radius;
     }
     update() {
@@ -10,6 +10,6 @@ class Ball {
     render() {
         fill('yellow');
         noStroke();
-        circle(this.pos.x, this.pos.y, this.radius);
+        circle(this.pos.x, this.pos.y, this.radius * 2);
     }
 }

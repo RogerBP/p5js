@@ -5,20 +5,31 @@ let ball;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-  ball = new Ball(windowWidth / 2, windowHeight / 2, 20);
+  ball = new Ball(windowWidth / 2, windowHeight / 2, 10);
+  limit_circle = {
+    radius: width / 2,
+    x: width / 2,
+    y: height / 2,
+  }
 }
 
 function draw() {
   background(0);
+  circle(limit_circle.x, limit_circle.y, limit_circle.radius * 2)
   ball.update();
-  ball.render();
   check_limits(ball);
+  ball.render();
+
+  noFill();
+  stroke(255);
+
 }
 
 function check_limits(b) {
-  if (b.pos.x >= width - 10 || b.pos.x <= 10 ||
-    b.pos.y >= height - 10 || b.pos.y <= 10) {
+  const center = createVector(limit_circle.x, limit_circle.y);
+  const dist = p5.Vector.dist(center, b.pos);
+  if (dist >= limit_circle.radius) {
     b.pos.sub(b.spd);
-    b.spd.rotate(90);
+    b.spd.rotate(60);
   }
 }
