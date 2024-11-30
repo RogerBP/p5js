@@ -19,4 +19,8 @@ function drawCircle(c) {
   stroke(255);
   strokeWeight(1);
   circle(c.x, c.y, c.r * 2);
+
+  let y = c.y - c.r;
+  fill(255);
+  circle(c.x, y, 10);
 } 
