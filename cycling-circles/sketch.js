@@ -15,12 +15,17 @@ function draw() {
 }
 
 function drawCircle(c) {
+  push();
+  translate(c.x, c.y);
+  rotate(c.a);
+  c.a += 0.01;
   noFill();
   stroke(255);
   strokeWeight(1);
-  circle(c.x, c.y, c.r * 2);
+  circle(0, 0, c.r * 2);
 
-  let y = c.y - c.r;
+  let y = -c.r;
   fill(255);
-  circle(c.x, y, 10);
+  circle(0, y, 10);
+  pop();
 } 
