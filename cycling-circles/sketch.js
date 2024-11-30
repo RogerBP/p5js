@@ -1,17 +1,15 @@
-let c = { x: 0, y: 0, r: 0, a: 0 }
+let circles = []
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   const d = min(width, height);
-  c.x = width / 2;
-  c.y = height / 2;
-  c.r = d / 3;
-  c.a = 0;
+  let c = { x: width / 2, y: height / 2, r: d / 3, a: 0 }
+  circles.push(c)
 }
 
 function draw() {
   background(0);
-  drawCircle(c)
+  circles.forEach(c => drawCircle(c))
 }
 
 function drawCircle(c) {
