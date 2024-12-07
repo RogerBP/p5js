@@ -8,11 +8,7 @@
       "name": "Chrome server",
       "request": "launch",
       "type": "chrome",
-<<<<<<< HEAD
-      "url": "http://127.0.0.1:5500/",
-=======
       "url": "http://localhost:5500",
->>>>>>> cycling-circles
       "webRoot": "${workspaceFolder}"
     },
 
